@@ -1,0 +1,21 @@
+---
+- name: Fixing inhibitors preventing leapp to upgrade
+  hosts: servers
+  remote_user: root
+
+  tasks:
+    - include_tasks: include_files/disable_kernel_mods.yml
+
+    - include_tasks: include_files/fix_answers_file.yml
+
+    - include_tasks: include_files/permit_root_login.yml
+
+    - name: perform yum clean all
+      ansible.builtin.shell:
+        cmd: yum clean all
+
+    - name: cleanup cache dnf
+      ansible.builtin.shell:
+        cmd: rm -fr /var/cache/dnf
+
+

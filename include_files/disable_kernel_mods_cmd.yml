@@ -1,0 +1,9 @@
+---
+  - name: disabling kernel module floppy unsupported in rhel8
+    ansible.builtin.shell:
+      cmd: modprobe -r  floppy
+  
+  - name: disabling kernel module pata_acpi unsupported in rhel8
+    ansible.builtin.shell:
+      cmd: modprobe -r  pata_acpi
+
