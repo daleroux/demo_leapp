@@ -1,0 +1,5 @@
+---
+  - name: fix sections in answers file
+    ansible.builtin.shell:
+      cmd: leapp answer --section remove_pam_pkcs11_module_check.confirm=True
+

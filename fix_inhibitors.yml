@@ -1,0 +1,10 @@
+---
+- name: Fixing inhibitors preventing leapp to upgrade
+  hosts: servers
+
+  tasks:
+    - import_tasks: import_files/disable_kernel_mods.yml
+    - import_tasks: import_files/fix_answers_file.yml
+
+
+
