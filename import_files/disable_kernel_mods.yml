@@ -1,6 +1,6 @@
 ---
   - name: disabling kernel module pata_acpi unsupported in rhel8
-    modprobe:     
+    community.general.modprobe:     
       name: pata_acpi
       state: absent
 

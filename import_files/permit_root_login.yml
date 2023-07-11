@@ -1,13 +1,13 @@
 ---
   - name: enable root login
-    lineinfile: 
+    ansible.builtin.lineinfile: 
       path: /etc/ssh/sshd_config 
       regexp: '^PermitRootLogin yes'
       line: PermitRootLogin yes
       state: present
 
   - name: Restart sshd
-    service:
+    ansible.builtin.service:
       name: sshd
       state: restarted
 
